@@ -11,14 +11,14 @@ import os
 
 # Define pagination boundaries
 START_PAGE = 1
-END_PAGE = 5  # Change this to whatever page you want to stop at
+END_PAGE = 25  # Change this to whatever page you want to stop at
 
 # Paste your cookies and tokens here before execution
 COOKIES = {
     "auth_token": "0ebc62618ca6ee0009bfd15dc79cf3c3882fe7c6",
-    "_ga": "GA1.1.416671207.1779705207",
-    "cf_clearance": "EtFqi7eB_sTqw92rygkwnJqNQxSDz0hrViVJ5kvMZNI-1779705206-1.2.1.1-ghUrwmy4NWa1X.9Xh06EA9ZGTto9FYfLs9i2mzYF8yxEC990QrIJTmwEUGfG2GfsU3VCN.yv0VscBq96UEKdU1K_4v7QgtNOqsUEMrCqVAgfOmTqKv2mTqrLTrmuyaY1pH2DzoiHYSsivH_VyNfuIMm2lG9FnYcz7856X4WBSDnT6OmspkI_fl9PsrhhUp.RpCZDWoYH3ffEe2a00q0Qj_tQvQiNdEPReooRVBl3g168FetBHswjah..IKQzP4G.V6tAR6a8EP3ew6pgMCAMhVMNRtN7MmDJoWevyj9Cc.tX6ATvoPJPmug2OA9lFa3pItN10On8DQMJLDsO8sVlHrv8QlqVbrK2P7Kkp0lpLQcjNdfzJFORfEmldHYLkuDmkhCweF8QjcEZrbnIJk8j5CuTgWAKzj7637AET68TCTw",
-    "_ga_707F2E8WDS": "GS2.1.s1779705206$o1$g1$t1779705546$j22$l0$h0"
+    "_ga": "GA1.1.1267366790.1779707518",
+    "cf_clearance": "iXgSzVVqZp6psGDcvSE9trS.4gFHPQQMuzt1KR9KS1s-1779707517-1.2.1.1-vQV6xROMwTq5LiabJVDS6LUvPVPEzfvJsCPBWVxtp2IGAwyL4ZbpHOXQfn8V.dRSlCJ0BaMMFhFg559KC2400Tw.7Fb6UEaQ9AJFj.4XYNoYp42dQs2WnRwnoCBDPqT.15FjwpEA1wr1soTag9VCIjvZiNAGdF.BZ2YYeA4_PEYT951uQfOa9L90hBz3e8NG7mef4ZXXnrgPHXmJPC9Kq0v3X52xolWnotssUvmdnmWGFFMs4JXoyt_qBUpeNkdGaeDUwKoi8FlPzwkEed_HSBX5UgtU6ZPfVmq_VGIMrzf7OKaP187qASoe2Xb28GTGeRgNvzLtZZUvd0aGu_yQ4av3x05Gjqlx2bnPcceq905Z.5eXaY_SlBAH2YEKmpi2gUM4wgF.ugZF6iP.X5yHsn0wgeqVd07jllstVU3p7nM",
+    "_ga_707F2E8WDS": "GS2.1.s1779707517$o1$g0$t1779707517$j60$l0$h0"
 }
 
 API_HEADERS = {
