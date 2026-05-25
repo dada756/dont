@@ -22,6 +22,7 @@ COOKIES = {
 }
 
 API_HEADERS = {
+    "Host": "moctale.in",
     "Accept-Language": "en-US,en;q=0.9",
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36",
     "Accept": "*/*",
@@ -33,6 +34,7 @@ API_HEADERS = {
 }
 
 IMAGE_HEADERS = {
+    "Host": "media.moctale.in",
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36",
     "Accept": "image/avif,*/*;q=1.0",
     "Sec-Fetch-Site": "same-site",
