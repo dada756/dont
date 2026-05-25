@@ -45,7 +45,7 @@ IMAGE_HEADERS = {
     "Pragma": "no-cache"
 }
 
-BASE_URL = "https://mysite.in"
+BASE_URL = "https://moctale.in"
 
 # ==========================================
 # 🛠️ HELPER FUNCTIONS
