@@ -10,8 +10,7 @@ PROXY_URL = os.getenv(
 )
 
 def verify_proxy_ip():
-    # ipify will reflect the IP. If you want to see the headers sent, 
-    # you could switch this to "https://httpbin.org/headers" for debugging.
+    # ipify will reflect the IP.
     target_url = "https://api.ipify.org?format=json"
 
     # Generating some dummy values for the dynamic fields
@@ -40,7 +39,7 @@ def verify_proxy_ip():
             headers=headers,
             proxy=PROXY_URL,
             timeout=20,
-            impersonate="chrome110_android" # Changed to Android to match your X-Platform headers
+            impersonate="chrome110" # Reverted to standard chrome110 profile
         )
         response.raise_for_status()
 
