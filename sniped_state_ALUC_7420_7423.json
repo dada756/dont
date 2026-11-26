@@ -4,8 +4,8 @@
     "7420",
     "7423"
   ],
-  "completed_waves": 0,
-  "last_wave_finish_timestamp": 0,
+  "completed_waves": 1,
+  "last_wave_finish_timestamp": 1795693036.5835114,
   "available_seats": {
     "7423_R_16": {
       "venue_code": "ALUC",
