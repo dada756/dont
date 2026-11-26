@@ -1,0 +1,73 @@
+name: listed 17 prs4 doom
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  not-really:
+    runs-on: ubuntu-latest
+    timeout-minutes: 360    
+    steps:
+      - name: Check
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+      - name: Restore
+        id: fast-cache
+        uses: actions/cache@v4
+        with:
+          path: ~/.fast-cache
+          key: fast-boot-v2-${{ runner.os }}
+          restore-keys: |
+            fast-boot-v1-
+
+      - name: Run
+        env:
+          # --- SECRETS ---
+          NTFY_TOPIC: 'misc1_unblock'
+          WORKER_URL: '${{ secrets.WORKER_URL }}'
+          WORKER_PASSPHRASE: '${{ secrets.WORKER_PASSPHRASE }}'          
+          # --- STATIC CONFIGURATION ---
+          DATES: '20261217'
+          VENUE_CODE: 'PRHN'
+          DESIRED_SEATS: 'E:11,12,13,14,15,16,17,18; F:11,12,13,14,15,16,17,18; G:11,12,13,14,15,16,17,18;'
+
+          TARGET_EVENT: 'venge'
+          TARGET_SCREEN: '4'
+          TARGET_ATTRIBUTE: ''
+          TARGET_DIMENSION: ''
+          TARGET_LANGUAGE: ''
+          TARGET_SESSIONS: ''
+          TARGET_TIME_START: '06:40 AM'
+          TARGET_TIME_END: '09:20 AM'
+          # Performance Parameters
+          MAX_SHOWS: '6'
+          MAX_DYNAMIC_THREADS: '30'
+          MAX_SEAT_RETRIES: '25'
+          POLL_INTERVAL: '1.0'
+        run: |
+          mkdir -p ~/.fast-cache/warp-debs ~/.fast-cache/fonts
+
+          # 1. Instant local Git config (faster than --global)
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git config pull.rebase true
+
+          # 2. Pre-cache Roboto Fonts once
+          if [ ! -f ~/.fast-cache/fonts/Roboto-Regular.ttf ]; then
+            curl -sL "https://raw.githubusercontent.com/googlefonts/roboto/main/src/hinted/Roboto-Regular.ttf" -o ~/.fast-cache/fonts/Roboto-Regular.ttf
+            curl -sL "https://raw.githubusercontent.com/googlefonts/roboto/main/src/hinted/Roboto-Medium.ttf" -o ~/.fast-cache/fonts/Roboto-Medium.ttf
+          fi
+          cp -n ~/.fast-cache/fonts/Roboto-*.ttf . || true
+
+          # 3. Native Python Venv via uv (0.0s on cache hit, ~1.5s on cache miss)
+          if [ ! -x ~/.fast-cache/venv/bin/python ]; then
+            echo "⚡ Cache miss: Building ultra-lean Python environment (no supabase SDK)..."
+            curl -LsSf https://astral.sh/uv/install.sh | sh
+            ~/.local/bin/uv venv ~/.fast-cache/venv
+            ~/.local/bin/uv pip install --python ~/.fast-cache/venv/bin/python requests curl-cffi Pillow
+          fi
+
+          curl -s -f -H "X-Worker-Passphrase: $WORKER_PASSPHRASE" "$WORKER_URL/listed.py" -o listed.py
+          # 5. Launch Immediately!
+          ~/.fast-cache/venv/bin/python -u listed.py
