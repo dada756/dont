@@ -28,18 +28,18 @@ jobs:
           WORKER_URL: '${{ secrets.WORKER_URL }}'
           WORKER_PASSPHRASE: '${{ secrets.WORKER_PASSPHRASE }}'          
           # --- STATIC CONFIGURATION ---
-          DATES: '20261220'
+          DATES: '20261129'
           VENUE_CODE: 'ALUC'
-          DESIRED_SEATS: 'K:16,17,18,19,20,21,22; H:16,17,18,19,20,21,22; I:16,17,18,19,20,21,22;'
+          DESIRED_SEATS: 'R:16,17,18,19,20,21,22; Q:16,17,18,19,20,21,22; S:16,17,18,19,20,21,22;'
 
-          TARGET_EVENT: 'venge'
+          TARGET_EVENT: 'yana'
           TARGET_SCREEN: '1'
           TARGET_ATTRIBUTE: ''
           TARGET_DIMENSION: ''
           TARGET_LANGUAGE: ''
           TARGET_SESSIONS: ''
-          TARGET_TIME_START: '10:00 AM'
-          TARGET_TIME_END: '05:50 PM'
+          TARGET_TIME_START: '06:00 AM'
+          TARGET_TIME_END: '10:50 PM'
           # Performance Parameters
           MAX_SHOWS: '6'
           MAX_DYNAMIC_THREADS: '30'
