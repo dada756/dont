@@ -30,7 +30,7 @@ jobs:
           # --- STATIC CONFIGURATION ---
           DATES: '20261219'
           VENUE_CODE: 'PRHN'
-          DESIRED_SEATS: 'K:22,23,24,25,26,27,28; I:22,23,24,25,26,27,28; J:22,23,24,25,26,27,28;'
+          DESIRED_SEATS: 'K:20,21,22,23,24,25,26,27,28; I:20,21,22,23,24,25,26,27,28; J:20,21,22,23,24,25,26,27,28;'
 
           TARGET_EVENT: ''
           TARGET_SCREEN: ''
