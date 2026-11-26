@@ -25,7 +25,6 @@ jobs:
         env:
           # --- SECRETS ---
           NTFY_TOPIC: 'misc1_unblock'
-          PROXY_LIST: '${{ secrets.PROXY_LIST }}'
           WORKER_URL: '${{ secrets.WORKER_URL }}'
           WORKER_PASSPHRASE: '${{ secrets.WORKER_PASSPHRASE }}'          
           # --- STATIC CONFIGURATION ---
