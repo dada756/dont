@@ -1,4 +1,4 @@
-name: listed 17 prs4 doom
+name: listed 17 prs6 doom
 on:
   workflow_dispatch:
 permissions:
